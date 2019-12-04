@@ -9,4 +9,46 @@
     <version>1.0-SNAPSHOT</version>
 
 
+    <profiles>
+        <profile>
+            <id>xuqplus-release</id>
+            <distributionManagement>
+                <repository>
+                    <id>xuqplus</id>
+                    <url>http://java8.xyz:8081/repository/maven-releases/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>xuqplus-snapshot</id>
+            <distributionManagement>
+                <repository>
+                    <id>xuqplus</id>
+                    <url>http://java8.xyz:8081/repository/maven-snapshots/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
